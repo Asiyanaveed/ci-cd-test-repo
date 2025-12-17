@@ -13,7 +13,7 @@ const mongoose = require('mongoose');
 exports.connectMongoDb = async (ConnectionURL) => {
     try {
         // Mongoose ko MongoDB se connect karein
-        const connection = await mongoose.connect(MONGODB_URL);
+        const connection = await mongoose.connect(ConnectionURL);
         
         console.log("✅ MongoDB connected successfully!");
         console.log(`📊 Database: ${connection.connection.name}`);

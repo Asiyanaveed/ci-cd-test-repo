@@ -1,9 +1,9 @@
-const { SQLiteAsyncDialect } = require("drizzle-orm/sqlite-core")
+
 const user_collection = require("../model/user.model")
 
 
 
-exports.createFunction = SQLiteAsyncDialect (req, res)=>{
+exports.createFunction = async (req, res) => {
 try{
         const {userName, email, password} = req.body
 
@@ -21,7 +21,7 @@ try{
 
     return res.status(201).json({status: "success", data: newUser})
 } catch (error){
-    return res.status(500).json({error : "kch masla he"})
+    return res.status(500).json({error: error})
 }
 
 
